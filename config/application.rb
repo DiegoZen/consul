@@ -89,6 +89,7 @@ module Consul
 
     config.after_initialize do
       Globalize.set_fallbacks_to_all_available_locales
+      ActionView::Base.sanitized_allowed_attributes.add 'target'
     end
 
     config.assets.paths << Rails.root.join("app", "assets", "fonts")
